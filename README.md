@@ -3,7 +3,7 @@
 The Weyer Mental Health Progressive Web Application (PWA) is intended to give users with easily accessible mental health services. The portal provides a variety of entertainment options to enhance mental health, such as articles, podcasts, video and music playlists, and journaling tools. The site has a user-friendly layout and allows you to sign in or sign up for personalized content, as well as access support services.
 
 
-##Features:
+## Features:
 - User Authentication: Users can sign up, sign in, and manage their accounts.
 - Booking Options: There are options for user to book for a consultation online.
 - Entertainment Options:
@@ -16,13 +16,13 @@ The Weyer Mental Health Progressive Web Application (PWA) is intended to give us
    Installable on mobile devices for offline access.
    Fast loading and reliable performance.
 
-##Technology Stack:
+## Technology Stack:
 - HTML/CSS/JavaScript: Core web technologies for building the front-end interface.
 - Materialize CSS: framework used for designing responsive layouts.
 - Local Storage: To store user preferences and journals.
 - PWA Features (Future Improvement): Service workers, caching for offline functionality, and installable app setup.
 
-##File Structure:
+## File Structure:
 - index.html - Home page with mental health resources.
 - about.html - Page that talk about our application goals and information
 - entertainment.html - Entertainment options page with articles, videos, podcasts, and journaling.
@@ -34,5 +34,5 @@ The Weyer Mental Health Progressive Web Application (PWA) is intended to give us
 - js/scripts.js - JavaScript handling PWA.
 - images/ - store all the images used in the vscode
 
-##Future Improvements
+## Future Improvements
 - PWA functionality: (offline access, installability, etc.)
