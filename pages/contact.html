@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Weyer</title>
+    <link rel="stylesheet" href="/materialize/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/materialize/styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="navbar-fixed">
+            <nav class="purple darken-3">
+                <div class="nav-wrapper container">
+                    <a href="/" class="brand-logo">
+                        <img src="/images/logo.png" alt="Weyer Logo" class="logo-img">
+                        <span class="brand-text">Weyer</span>
+                    </a>
+                    <a href="/" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/pages/about.html">About</a></li>
+                        <li><a href="/pages/booking.html">Booking</a></li>
+                        <li><a href="/pages/entertainment.html">Entertainment</a></li>
+                        <li><a href="/pages/contact.html">Contact</a></li>
+                        <li><a href="/pages/booking.html" class="waves-effect waves-light btn-small">Book Now</a></li>
+                        <li><a href="/pages/signin.html" class="waves-effect waves-light btn-small">Sign In</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Sidenav -->
+    <aside>
+        <ul class="sidenav" id="mobile-menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/pages/about.html">About</a></li>
+            <li><a href="/pages/booking.html">Booking</a></li>
+            <li><a href="/pages/entertainment.html">Entertainment</a></li>
+            <li><a href="/pages/contact.html">Contact</a></li>
+            <li><a href="/pages/booking.html" class="waves-effect waves-light btn-small">Book Now</a></li>
+            <li><a href="/pages/signin.html" class="waves-effect waves-light btn-small">Sign In</a></li>
+        </ul>
+    </aside>
+
+    <!-- Contact Section -->
+<main class="container">
+    <h3 class="center-align purple-text text-darken-3">Contact Us</h3>
+    <p class="center-align">If you have any questions or concerns, feel free to reach out to us. We're here to help!</p>
+
+    <!-- Contact Information and Form Layout -->
+    <div class="row">
+        <!-- Left column for contact information -->
+        <div class="col s12 m6">
+            <div class="card contact-card">
+                <div class="card-content">
+                    <h5>Contact Information</h5>
+                    <p>Email: <a href="mailto:support@weyer.com">support@weyer.com</a></p>
+                    <p>Phone: 1-800-34435</p>
+                    <p>Address: 123 Mental Health Lane, Weyer City, USA</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right column for the contact form -->
+        <div class="col s12 m6">
+            <div class="card contact-card">
+                <div class="card-content">
+                    <h5>Send us a Message</h5>
+                    <form action="#" method="POST">
+                        <div class="input-field">
+                            <input type="text" id="full_name" name="full_name" required>
+                            <label for="full_name">Full Name</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="input-field">
+                            <textarea id="message" name="message" class="materialize-textarea" required></textarea>
+                            <label for="message">Message</label>
+                        </div>
+                        <button type="submit" class="waves-effect waves-light btn purple darken-3">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+    <!-- Footer -->
+    <footer class="page-footer purple darken-3">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Weyer Health</h5>
+                    <p class="grey-text text-lighten-4">Dedicated to supporting mental health and well-being for everyone.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Contact</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="mailto:s_chhay@mail.fhsu.edu">s_chhay@mail.fhsu.edu</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Import Materialize JS and custom JS file -->
+    <script src="/js/materialize.min.js"></script>
+    <script src="/js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weyer Prototype</title>
+    <!-- Import Materialize CSS -->
+    <link rel="stylesheet" href="/materialize/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/materialize/styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="navbar-fixed">
+            <nav class="purple darken-3">
+                <div class="nav-wrapper container">
+                    <a href="/" class="brand-logo">
+                        <img src="/images/logo.png" alt="Weyer Logo" class="logo-img">
+                        <span class="brand-text">Weyer</span>
+                    </a>
+                    <a href="/" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/pages/about.html">About</a></li>
+                        <li><a href="/pages/booking.html">Booking</a></li>
+                        <li><a href="/pages/entertainment.html">Entertainment</a></li>
+                        <li><a href="/pages/contact.html">Contact</a></li>
+                        <li><a href="/pages/booking.html" class="waves-effect waves-light btn-small">Book Now</a></li>
+                        <li><a href="/pages/signin.html" class="waves-effect waves-light btn-small">Sign In</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Sidenav -->
+    <aside>
+        <ul class="sidenav" id="mobile-menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/pages/about.html">About</a></li>
+            <li><a href="/pages/booking.html">Booking</a></li>
+            <li><a href="/pages/entertainment.html">Entertainment</a></li>
+            <li><a href="/pages/contact.html">Contact</a></li>
+            <li><a href="/pages/booking.html" class="waves-effect waves-light btn-small">Book Now</a></li>
+            <li><a href="/pages/signin.html" class="waves-effect waves-light btn-small">Sign In</a></li>
+        </ul>
+    </aside>
+    
+    <!-- Welcome Section -->
+    <div class="container welcome-section">
+        <div class="row valign-wrapper">
+            <div class="col s12 m6">
+                <h1 class="purple-text text-darken-3">Welcome to WEYER</h1>
+                <p>Where mental health matters. Discover valuable insights, tips, and resources for a healthier mind. Explore, connect, and prioritize your well-being with us.</p>
+                <div class="learn-more-container">
+                    <a href="/pages/about.html" class="btn-learn-more waves-effect waves-light blue lighten-2">Learn More</a>
+                </div>
+            </div>
+            <div class="col s12 m6">
+                <div class="video-container">
+                    <iframe width="100%" height="350" src="https://www.youtube.com/embed/jYexk4Pa8vg?autoplay=1&mute=1&loop=1" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Services Section -->
+    <div class="container services-section">
+        <h3 class="center-align purple-text text-darken-3">Services</h3>
+        <div class="row">
+            <div class="col s12 m3">
+                <div class="card small">
+                    <div class="card-image">
+                        <img src="/images/appointment.jpeg" alt="appointment">
+                    </div>
+                    <div class="card-content">
+                        <p>Book an appointment with one of our mental health professionals.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m3">
+                <div class="card small">
+                    <div class="card-image">
+                        <img src="/images/entertainment.jpeg" alt="entertainment">
+                    </div>
+                    <div class="card-content">
+                        <p>Explore our entertainment page of mental health resources.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m3">
+                <div class="card small">
+                    <div class="card-image">
+                        <img src="/images/journal.jpeg" alt="journal">
+                    </div>
+                    <div class="card-content">
+                        <p>Read our journal to learn more about mental health.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m3">
+                <div class="card small">
+                    <div class="card-image">
+                        <img src="/images/contact.jpeg" alt="contact">
+                    </div>
+                    <div class="card-content">
+                        <p>Connect with us to learn more about our services.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Partners Section -->
+    <div class="container partners-section">
+        <h3 class="center-align purple-text text-darken-3">Our Partner</h3>
+        <div class="row center-align">
+            <div class="col s4">
+                <img src="/images/MOH.png" alt="Ministry of Health" class="responsive-img partner-logo">
+                <p>Ministry of Health</p>
+            </div>
+            <div class="col s4">
+                <img src="/images/WHO.png" alt="World Health Organization" class="responsive-img partner-logo">
+                <p>World Health Organization</p>
+            </div>
+            <div class="col s4">
+                <img src="/images/unicef.png" alt="UNICEF" class="responsive-img partner-logo">
+                <p>UNICEF</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Location Section -->
+    <div class="container location-section center-align">
+        <h3 class="purple-text text-darken-3">Visit our center</h3>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7093.747155474104!2d104.88651242868792!3d11.599311773360778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109522e1adbf683%3A0x3f4395cd35ec9617!2sAEON%20Mall%20Sen%20Sok!5e0!3m2!1sen!2skh!4v1699971920911!5m2!1sen!2skh" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer purple darken-3">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Weyer Health</h5>
+                    <p class="grey-text text-lighten-4">Mental health is our priority.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Contact</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="mailto:s_chhay@mail.fhsu.edu">s_chhay@mail.fhsu.edu</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Import Materialize JS and custom JS file -->
+    <script src="/js/materialize.min.js"></script>
+    <script src="/js/scipts.js"></script>
+</body>
+</html>

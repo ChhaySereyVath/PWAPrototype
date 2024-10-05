@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Weyer</title>
+    <link rel="stylesheet" href="/materialize/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/materialize/styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="navbar-fixed">
+            <nav class="purple darken-3">
+                <div class="nav-wrapper container">
+                    <a href="/" class="brand-logo">
+                        <img src="/images/logo.png" alt="Weyer Logo" class="logo-img">
+                        <span class="brand-text">Weyer</span>
+                    </a>
+                    <a href="/" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/pages/about.html">About</a></li>
+                        <li><a href="/pages/booking.html">Booking</a></li>
+                        <li><a href="/pages/entertainment.html">Entertainment</a></li>
+                        <li><a href="/pages/contact.html">Contact</a></li>
+                        <li><a href="/pages/booking.html" class="waves-effect waves-light btn-small">Book Now</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Sidenav -->
+    <aside>
+        <ul class="sidenav" id="mobile-menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/pages/about.html">About</a></li>
+            <li><a href="/pages/booking.html">Booking</a></li>
+            <li><a href="/pages/entertainment.html">Entertainment</a></li>
+            <li><a href="/pages/contact.html">Contact</a></li>
+            <li><a href="/pages/booking.html" class="waves-effect waves-light btn-small">Book Now</a></li>
+        </ul>
+    </aside>
+
+    <!-- Sign Up Form -->
+    <main class="container">
+        <div class="row center-align">
+            <div class="col s12 m6 offset-m3">
+                <div class="card">
+                    <div class="card-content">
+                        <h5>Create an Account</h5>
+                        <form action="/register" method="POST">
+                            <div class="input-field">
+                                <input type="text" id="full_name" name="full_name" required>
+                                <label for="full_name">Full Name</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="email" id="email" name="email" required>
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" id="password" name="password" required>
+                                <label for="password">Password</label>
+                            </div>
+                            <button type="submit" class="waves-effect waves-light btn purple darken-3">Sign Up</button>
+                        </form>
+                    </div>
+                    <div class="card-action">
+                        <p>Already have an account? <a href="/pages/signIn.html">Sign In</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (reuse from homepage) -->
+    <footer class="page-footer purple darken-3">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Weyer Health</h5>
+                    <p class="grey-text text-lighten-4">Mental health is our priority.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Contact</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="mailto:s_chhay@mail.fhsu.edu">s_chhay@mail.fhsu.edu</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Import Materialize JS and custom JS file -->
+    <script src="/js/materialize.min.js"></script>
+    <script src="/js/scripts.js"></script>
+</body>
+</html>

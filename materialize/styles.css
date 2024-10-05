@@ -1,0 +1,557 @@
+/* General layout */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color:#e9cfec ;
+    overflow-x: hidden;
+}
+
+/* Container for the main content, to allow the footer to stick */
+.container {
+    flex: 1;
+}
+
+
+/* Style for the logo image */
+.logo-img {
+    height: 80px;         
+    vertical-align: middle;
+}
+
+.brand-logo .brand-text {
+    display: inline; 
+}
+
+/* Nav */
+.btn-small {
+    border-radius: 4px;       
+    text-align: center;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.welcome-section {
+    margin-top: 50px;
+}
+
+.learn-more-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.btn-learn-more {
+    font-size: 16px;
+    padding: 6px 12px; 
+    background-color: #3498db;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-learn-more:hover {
+    background-color: #2980b9;
+    color: white;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 350px;
+}
+
+.services-section .card {
+    background-color: #cbb1e2;
+    border-radius: 8px;
+}
+
+.services-section .card.small {
+    max-height: 250px;
+}
+
+.partners-section img.partner-logo {
+    width: 100px;
+    height: auto;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+}
+
+/* About Section */
+/* Main Content */
+main h2 {
+    text-align: center;
+    color: #5e35b1;
+}
+
+main p {
+    text-align: center;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Section */
+section {
+    margin: 30px 0;
+    text-align: center;
+}
+
+section h3 {
+    color: #5e35b1;
+    font-weight: bold;
+}
+
+section p {
+    color: #444;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.5;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+table th, table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+table th {
+    background-color: #af69ee;
+    color: white;
+    font-weight: bold;
+}
+
+table td {
+    background-color: #f3e5f5;
+    color: #333;
+}
+
+/* Booking Section */
+.booking-section {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.booking-section h2 {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.booking-section p {
+    font-size: 1.1em;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.booking-section .card {
+    background-color: #cbb1e2;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.booking-section .card .card-title {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.booking-section .card-content p {
+    font-size: 1em;
+    margin: 10px 0;
+}
+
+.booking-section .btn {
+    font-size: 1em;
+    background-color: #3498db;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* layout for Booking and Payment sections */
+.booking-details-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.form-section, .summary-section {
+    background-color: #f3e5f5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.form-section {
+    width: 65%;
+}
+
+.summary-section {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.summary-card, .payment-card {
+    background-color: #f3e5f5;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h3, h4 {
+    color: #5e35b1;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #2980b9;
+}
+
+.payment-card input[type="radio"] {
+    margin-right: px;
+}
+
+/* Footer styling */
+.page-footer {
+    background-color: #af69ee;
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0; /* Reduced padding for compactness */
+    position: relative;
+    bottom: 0;
+    left: 0;
+    margin-top: auto; /* Ensures footer stays at the bottom */
+}
+
+
+.page-footer .container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.page-footer .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.page-footer h5, .page-footer p, .page-footer ul {
+    margin: 0;
+    padding: 0;
+    font-size: 0.9em;
+}
+
+/* Footer link styling */
+.page-footer a {
+    color: #e0e0e0;
+    text-decoration: none;
+}
+
+.page-footer a:hover {
+    color: #ffffff;
+}
+
+.articles-section, .playlist-section, .podcast-section, .journal-section {
+  margin-top: 50px;
+}
+
+.card {
+  background-color: #f3e5f5;
+  border-radius: 8px;
+}
+
+.video-container iframe {
+  border-radius: 8px;
+}
+
+.center-align {
+  text-align: center;
+}
+
+/* Entertainment Section */
+.entertainment-card {
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.entertainment-card .entertainment-image img {
+    height: 300px; 
+    object-fit: cover; 
+    width: 100%;
+}
+
+.entertainment-card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.entertainment-card-action {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-card {
+    min-height: 360px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact-card .card-content h5 {
+    margin-bottom: 20px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+}
+
+
+main.container {
+    margin-top: 100px; 
+}
+
+
+/* Mobile-specific adjustments */
+@media (max-width: 600px) {
+
+    /* Adjust logo size for mobile */
+    .logo-img {
+        height: 75px;
+    }
+
+    .brand-logo .brand-text {
+        display: none; /* Hide text on mobile */
+    }
+
+    .sidenav .btn-small {
+        font-size: 1em;        
+        padding: 4px 8px;          
+        width: 70%;                
+        display: block;
+        margin: 8px auto;          
+        border-radius: 4px;        
+        text-align: center;        
+        box-sizing: border-box;    
+    }
+
+    /* Stack text and video vertically */
+    .welcome-section .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .welcome-section h1 {
+        font-size: 3em; 
+    }
+
+    .welcome-section p {
+        font-size: 1.5em; 
+    }
+
+    .learn-more-container {
+        margin-top: 10px;
+    }
+
+    .btn-learn-more {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    .video-container {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .video-container iframe {
+        width: 100%;
+        height: 200px; 
+        display: block; 
+    }
+
+    .services-section .card {
+        max-width: 90%; 
+        margin: 10px auto;
+    }
+
+    .services-section .card .card-content p {
+        font-size: 0.85em; 
+    }
+
+    .partners-section img.partner-logo {
+        width: 80px; 
+    }
+
+    /*about section*/
+    section {
+        margin: 20px 0;
+        padding: 0 15px; 
+    }
+
+    /* Smaller font sizes for main content */
+    main h2 {
+        font-size: 1.8em;
+    }
+
+    main p, section p {
+        font-size: 0.9em; 
+        line-height: 1.4;
+    }
+
+    /* Adjust table styling on smaller screens */
+    table th, table td {
+        padding: 6px;
+        font-size: 0.85em; 
+    }
+
+    /* Adjustments for mobile view booking */
+    .booking-section h2 {
+        font-size: 1.8em;
+    }
+
+    .booking-section p {
+        font-size: 1em;
+    }
+
+    .booking-section .card .card-title {
+        font-size: 1.2em;
+    }
+
+    .booking-section .card-content p {
+        font-size: 0.9em;
+    }
+
+    .booking-section .btn {
+        font-size: 0.8em;
+        padding: 6px 12px;
+    }
+
+    /* Booking Details Container: Stack the sections vertically */
+    .booking-details-container {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    /* Full width for each section on mobile */
+    .form-section, .summary-section, .summary-card, .payment-card {
+        width: 100%; /* Full width on mobile */
+        margin-bottom: 20px; /* Space between sections */
+    }
+
+    .form-section h2, .summary-card h3, .payment-card h4 {
+        font-size: 1.6em;
+    }
+
+    .form-section label, .summary-card p, .payment-card label {
+        font-size: 1em;
+    }
+
+    /* Booking Summary & Payment Method on mobile */
+    .summary-card, .payment-card {
+        padding: 15px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: #f3e5f5;
+    }
+
+    /* Button Styling */
+    .submit-btn {
+        font-size: 1em;
+        padding: 10px;
+        width: 100%;
+    }
+
+    /* Stack the contact information and form vertically */
+    .row {
+        flex-direction: column;
+        margin: 0;
+    }
+    
+    /* reduce card size and padding */
+    .contact-card {
+        min-height: auto;
+        margin-bottom: 15px; 
+        padding: 8px; 
+    }
+
+    h3 {
+        font-size: 1.5rem; 
+    }
+
+    h5 {
+        font-size: 1.2rem; 
+    }
+
+    p {
+        font-size: 0.8rem; 
+    }
+
+    button {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+
+    .input-field input, .input-field textarea {
+        font-size: 0.8rem; 
+    }
+
+    .card-content {
+        padding: 8px; 
+    }
+
+    .card-content h5 {
+        margin-bottom: 8px; 
+    }
+
+    /* Adjust footer layout for mobile */
+    .page-footer .row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .page-footer h5, .page-footer p {
+        margin-bottom: 10px;
+    }
+
+    .page-footer ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+}

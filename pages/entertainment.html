@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weyer - Book a Session</title>
+    <link rel="stylesheet" href="/materialize/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/materialize/styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="navbar-fixed">
+            <nav class="purple darken-3">
+                <div class="nav-wrapper container">
+                    <a href="/" class="brand-logo">
+                        <img src="/images/logo.png" alt="Weyer Logo" class="logo-img">
+                        <span class="brand-text">Weyer</span>
+                    </a>
+                    <a href="/" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/pages/about.html">About</a></li>
+                        <li><a href="/pages/booking.html">Booking</a></li>
+                        <li><a href="/pages/entertainment.html">Entertainment</a></li>
+                        <li><a href="/pages/contact.html">Contact</a></li>
+                        <li><a href="/pages/booking.html" class="waves-effect waves-light btn-small">Book Now</a></li>
+                        <li><a href="/pages/signin.html" class="waves-effect waves-light btn-small">Sign In</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Sidenav -->
+    <aside>
+        <ul class="sidenav" id="mobile-menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/pages/about.html">About</a></li>
+            <li><a href="/pages/booking.html">Booking</a></li>
+            <li><a href="/pages/entertainment.html">Entertainment</a></li>
+            <li><a href="/pages/contact.html">Contact</a></li>
+            <li><a href="/pages/booking.html" class="waves-effect waves-light btn-small">Book Now</a></li>
+            <li><a href="/pages/signin.html" class="waves-effect waves-light btn-small">Sign In</a></li>
+        </ul>
+    </aside>
+
+    <!-- Entertainment Section -->
+    <main class="container entertainment-section">
+        <h2 class="center-align purple-text text-darken-3">Entertainment Options</h2>
+        <p class="center-align">Choose your favorite way to relax and unwind.</p>
+        <div class="row">
+            <!-- Card 1: Mental Health Articles -->
+            <div class="col s12 m3">
+                <div class="card entertainment-card">
+                    <div class="card-image entertainment-image">
+                        <img src="/images/mentalhealth.jpeg" alt="Articles Image">
+                    </div>
+                    <div class="card-content entertainment-card-content">
+                        <span class="card-title">Mental Health Articles</span>
+                        <p>Read insightful articles to boost your mental well-being.</p>
+                    </div>
+                    <div class="card-action entertainment-card-action">
+                        <a href="#" class="btn waves-effect waves-light blue lighten-2">Read Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Videos & Songs -->
+            <div class="col s12 m3">
+                <div class="card entertainment-card">
+                    <div class="card-image entertainment-image">
+                        <img src="/images/entertainment.jpeg" alt="Videos & Songs Image">
+                    </div>
+                    <div class="card-content entertainment-card-content">
+                        <span class="card-title">Videos & Songs</span>
+                        <p>Watch relaxing videos or listen to calming music.</p>
+                    </div>
+                    <div class="card-action entertainment-card-action">
+                        <a href="#" class="btn waves-effect waves-light blue lighten-2">Watch/Listen</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Podcasts -->
+            <div class="col s12 m3">
+                <div class="card entertainment-card">
+                    <div class="card-image entertainment-image">
+                        <img src="/images/podcast.jpg" alt="Podcasts Image">
+                    </div>
+                    <div class="card-content entertainment-card-content">
+                        <span class="card-title">Podcasts</span>
+                        <p>Listen to expert-led discussions on mental health topics.</p>
+                    </div>
+                    <div class="card-action entertainment-card-action">
+                        <a href="#" class="btn waves-effect waves-light blue lighten-2">Listen Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: Journaling -->
+            <div class="col s12 m3">
+                <div class="card entertainment-card">
+                    <div class="card-image entertainment-image">
+                        <img src="/images/journal.jpeg" alt="Journaling Image">
+                    </div>
+                    <div class="card-content entertainment-card-content">
+                        <span class="card-title">Journaling</span>
+                        <p>Write about your day and reflect on your experiences.</p>
+                    </div>
+                    <div class="card-action entertainment-card-action">
+                        <a href="#" class="btn waves-effect waves-light blue lighten-2">Start Writing</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+      
+
+    <!-- Footer  -->
+    <footer class="page-footer purple darken-3">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Weyer Health</h5>
+                    <p class="grey-text text-lighten-4">Dedicated to supporting mental health and well-being for everyone.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Contact</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="mailto:s_chhay@mail.fhsu.edu">s_chhay@mail.fhsu.edu</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Import Materialize JS and custom JS file -->
+    <script src="/js/materialize.min.js"></script>
+    <script src="/js/scipts.js"></script>
+</body>
+</html>

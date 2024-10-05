@@ -1,0 +1,181 @@
+/* General styling */
+body, html {
+    height: 100%; /* Full height for body and html to support sticky footer */
+    display: flex;
+    flex-direction: column;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #e9cfec;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Style for the logo image */
+.logo-img {
+    height: 80px;         
+    vertical-align: middle;
+}
+
+.brand-logo .brand-text {
+    display: inline; /* Show text on desktop */
+}
+
+/* Nav */
+.btn-small {
+    border-radius: 4px;         /* Rounded corners for both desktop and mobile */
+    text-align: center;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+/* Main Content */
+main h2 {
+    text-align: center;
+    color: #5e35b1;
+}
+
+main p {
+    text-align: center;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Section */
+section {
+    margin: 30px 0;
+    text-align: center;
+}
+
+section h3 {
+    color: #5e35b1;
+    font-weight: bold;
+}
+
+section p {
+    color: #444;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.5;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+table th, table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+table th {
+    background-color: #af69ee;
+    color: white;
+    font-weight: bold;
+}
+
+table td {
+    background-color: #f3e5f5;
+    color: #333;
+}
+
+/* Footer */
+footer {
+    background-color: #af69ee;
+    color: white;
+    text-align: center;
+    padding: 5px; 
+    font-size: 1em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Adjust logo size for mobile */
+    .logo-img {
+        height: 75px;
+    }
+
+    .brand-logo .brand-text {
+        display: none; /* Hide text on mobile */
+    }
+
+    .sidenav .btn-small {
+        font-size: 1em;          /* Smaller font size */
+        padding: 4px 8px;          /* Reduced padding */
+        width: 70%;                /* Set width to a percentage */
+        display: block;
+        margin: 8px auto;          /* Center-align with spacing */
+        border-radius: 4px;        /* Optional: make button shape compact */
+        text-align: center;        /* Ensure text is centered */
+        box-sizing: border-box;    /* Ensure padding doesn’t affect width */
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .button-link {
+        width: 80%;
+        margin: 5px auto;
+    }
+
+    /* Reduce padding in sections */
+    section {
+        margin: 20px 0;
+        padding: 0 15px; /* Add padding for better alignment */
+    }
+
+    /* Smaller font sizes for main content */
+    main h2 {
+        font-size: 1.8em;
+    }
+
+    main p, section p {
+        font-size: 0.9em; /* Smaller text for paragraphs */
+        line-height: 1.4;
+    }
+
+    /* Adjust table styling on smaller screens */
+    table th, table td {
+        padding: 6px;
+        font-size: 0.85em; /* Reduce font size inside the table */
+    }
+
+    .page-footer {
+        padding: 15px;
+        font-size: 0.9em;
+    }
+}

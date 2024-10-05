@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Details - Weyer</title>
+    <link rel="stylesheet" href="/materialize/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/materialize/styles.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<header>
+    <div class="navbar-fixed">
+        <nav class="purple darken-3">
+            <div class="nav-wrapper container">
+                <a href="/" class="brand-logo">
+                    <img src="/images/logo.png" alt="Weyer Logo" class="logo-img">
+                    <span class="brand-text">Weyer</span>
+                </a>
+                <a href="/" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/pages/about.html">About</a></li>
+                    <li><a href="/pages/booking.html">Booking</a></li>
+                    <li><a href="/pages/entertainment.html">Entertainment</a></li>
+                    <li><a href="/pages/contact.html">Contact</a></li>
+                    <li><a href="/pages/booking.html" class="waves-effect waves-light btn-small">Book Now</a></li>
+                    <li><a href="/pages/signin.html" class="waves-effect waves-light btn-small">Sign In</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- Mobile Sidenav -->
+<aside>
+    <ul class="sidenav" id="mobile-menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/pages/about.html">About</a></li>
+        <li><a href="/pages/booking.html">Booking</a></li>
+        <li><a href="/pages/entertainment.html">Entertainment</a></li>
+        <li><a href="/pages/contact.html">Contact</a></li>
+        <li><a href="/pages/booking.html" class="waves-effect waves-light btn-small">Book Now</a></li>
+        <li><a href="/pages/signin.html" class="waves-effect waves-light btn-small">Sign In</a></li>
+    </ul>
+</aside>
+
+<main class="booking-details-container">
+    <div class="form-section">
+        <h2>Your Details</h2>
+        <form action="/submit-booking" method="POST">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" required>
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" required>
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required>
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" required>
+            <label for="arrivalTime">Preferred Session Time</label>
+            <input type="time" id="arrivalTime" name="arrivalTime" required>
+            <label for="comments">Any personal requests?</label>
+            <textarea id="comments" name="comments" rows="2"></textarea>
+            <button type="submit" class="submit-btn">Book Now</button>
+        </form>
+    </div>
+
+    <!-- Booking Summary Section -->
+    <div class="summary-section">
+        <div class="summary-card">
+            <h3>Booking Summary</h3>
+            <p><strong>Session Type:</strong> Premium Support Session</p>
+            <p><strong>Cost:</strong> $14.99 per session</p>
+            <p><strong>Date:</strong> Selected Date</p>
+            <p><strong>Time:</strong> Selected Time</p>
+        </div>
+        <div class="payment-card">
+            <h4>Payment Method</h4>
+            <form>
+                <label>
+                    <input type="radio" name="payment" value="CreditCard" onclick="showCardDetails()" required>
+                    <span>Credit/Debit Card</span>
+                </label>
+                <label>
+                    <input type="radio" name="payment" value="PayPal" onclick="hideCardDetails()">
+                    <span>PayPal</span>
+                </label>
+        
+                <!-- Card Details Section (Shown only if Credit/Debit Card is selected) -->
+                <div id="card-details" class="card-details" style="display: none;">
+                    <label for="cardName">Name on Card</label>
+                    <input type="text" id="cardName" name="cardName">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" id="cardNumber" name="cardNumber">
+                    <label for="expiryDate">Expiry Date</label>
+                    <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv">
+                </div>
+            </form>
+        </div>        
+    </div>
+</main>
+
+<!-- Footer (reuse from homepage) -->
+<footer class="page-footer purple darken-3">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Weyer Health</h5>
+                <p class="grey-text text-lighten-4">Dedicated to supporting mental health and well-being for everyone.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Contact</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="mailto:s_chhay@mail.fhsu.edu">s_chhay@mail.fhsu.edu</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Import Materialize JS and custom JS file -->
+<script src="/js/materialize.min.js"></script>
+<script src="/js/scipts.js"></script>
+</body>
+</html>
