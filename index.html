@@ -8,6 +8,16 @@
     <link rel="stylesheet" href="/materialize/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/materialize/styles.css">
+    <link rel="manifest" href="/manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/serviceworker.js').then(function(registration) {
+                console.log('Service Worker registered with scope:', registration.scope);
+            }).catch(function(error) {
+                console.log('Service Worker registration failed:', error);
+            });
+        }
+    </script>
 </head>
 <body>
 
@@ -17,7 +27,7 @@
             <nav class="purple darken-3">
                 <div class="nav-wrapper container">
                     <a href="/" class="brand-logo">
-                        <img src="/images/logo.png" alt="Weyer Logo" class="logo-img">
+                        <img src="/images/img/logo.png" alt="Weyer Logo" class="logo-img">
                         <span class="brand-text">Weyer</span>
                     </a>
                     <a href="/" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -59,8 +69,20 @@
                 </div>
             </div>
             <div class="col s12 m6">
-                <div class="video-container">
-                    <iframe width="100%" height="350" src="https://www.youtube.com/embed/jYexk4Pa8vg?autoplay=1&mute=1&loop=1" frameborder="0" allowfullscreen></iframe>
+                <div id="video-container">
+                    <!-- YouTube Video Embed -->
+                    <iframe id="youtube-video" 
+                            src="https://www.youtube.com/embed/jYexk4Pa8vg?autoplay=1&mute=1&loop=1" 
+                            frameborder="0" 
+                            allowfullscreen 
+                            width="100%" 
+                            height="350">
+                    </iframe>
+                    <!-- Offline Placeholder -->
+                    <div id="offline-placeholder" style="display: none; text-align: center;">
+                        <img src="/images/img/Offline.png" alt="Video not available offline" width="100%" height="350">
+                        <p style="color: #757575; font-style: italic;">Video content is not available offline.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -73,7 +95,7 @@
             <div class="col s12 m3">
                 <div class="card small">
                     <div class="card-image">
-                        <img src="/images/appointment.jpeg" alt="appointment">
+                        <img src="/images/img/appointment.jpeg" alt="appointment">
                     </div>
                     <div class="card-content">
                         <p>Book an appointment with one of our mental health professionals.</p>
@@ -83,7 +105,7 @@
             <div class="col s12 m3">
                 <div class="card small">
                     <div class="card-image">
-                        <img src="/images/entertainment.jpeg" alt="entertainment">
+                        <img src="/images/img/entertainment.jpeg" alt="entertainment">
                     </div>
                     <div class="card-content">
                         <p>Explore our entertainment page of mental health resources.</p>
@@ -93,7 +115,7 @@
             <div class="col s12 m3">
                 <div class="card small">
                     <div class="card-image">
-                        <img src="/images/journal.jpeg" alt="journal">
+                        <img src="/images/img/journal.jpeg" alt="journal">
                     </div>
                     <div class="card-content">
                         <p>Read our journal to learn more about mental health.</p>
@@ -103,7 +125,7 @@
             <div class="col s12 m3">
                 <div class="card small">
                     <div class="card-image">
-                        <img src="/images/contact.jpeg" alt="contact">
+                        <img src="/images/img/contact.jpeg" alt="contact">
                     </div>
                     <div class="card-content">
                         <p>Connect with us to learn more about our services.</p>
@@ -118,16 +140,41 @@
         <h3 class="center-align purple-text text-darken-3">Our Partner</h3>
         <div class="row center-align">
             <div class="col s4">
-                <img src="/images/MOH.png" alt="Ministry of Health" class="responsive-img partner-logo">
+                <img src="/images/img/MOH.png" alt="Ministry of Health" class="responsive-img partner-logo">
                 <p>Ministry of Health</p>
             </div>
             <div class="col s4">
-                <img src="/images/WHO.png" alt="World Health Organization" class="responsive-img partner-logo">
+                <img src="/images/img/WHO.png" alt="World Health Organization" class="responsive-img partner-logo">
                 <p>World Health Organization</p>
             </div>
             <div class="col s4">
-                <img src="/images/unicef.png" alt="UNICEF" class="responsive-img partner-logo">
+                <img src="/images/img/unicef.png" alt="UNICEF" class="responsive-img partner-logo">
                 <p>UNICEF</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div class="container testimonials-section">
+        <h3 class="center-align purple-text text-darken-3">What People Say About Us</h3>
+        <div class="row">
+            <div class="col s12 m4">
+                <div class="testimonial-card">
+                    <p>"Weyer has made it so easy for me to prioritize my mental health. The resources are invaluable!"</p>
+                    <p class="reviewer">- Jane D., Member</p>
+                </div>
+            </div>
+            <div class="col s12 m4">
+                <div class="testimonial-card">
+                    <p>"A wonderful platform with a supportive team. I always feel welcomed and understood."</p>
+                    <p class="reviewer">- Mark S., Client</p>
+                </div>
+            </div>
+            <div class="col s12 m4">
+                <div class="testimonial-card">
+                    <p>"Thanks to Weyer, I found the help I needed. The team is professional and caring."</p>
+                    <p class="reviewer">- Sarah L., Member</p>
+                </div>
             </div>
         </div>
     </div>

@@ -3,10 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In - Weyer</title>
+    <title>Weyer Prototype</title>
+    <!-- Import Materialize CSS -->
     <link rel="stylesheet" href="/materialize/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/materialize/styles.css">
+    <link rel="manifest" href="/manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/serviceworker.js').then(function(registration) {
+                console.log('Service Worker registered with scope:', registration.scope);
+            }).catch(function(error) {
+                console.log('Service Worker registration failed:', error);
+            });
+        }
+    </script>
 </head>
 <body>
 
@@ -16,7 +27,7 @@
             <nav class="purple darken-3">
                 <div class="nav-wrapper container">
                     <a href="/" class="brand-logo">
-                        <img src="/images/logo.png" alt="Weyer Logo" class="logo-img">
+                        <img src="/images/img/logo.png" alt="Weyer Logo" class="logo-img">
                         <span class="brand-text">Weyer</span>
                     </a>
                     <a href="/" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
