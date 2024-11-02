@@ -33,6 +33,9 @@ The Weyer Mental Health Progressive Web Application (PWA) is intended to give us
 - style.css - Custom styling for the PWA.
 - js/scripts.js - JavaScript handling PWA.
 - images/ - store all the images used in the vscode
+- manifest.json - for add to homescreen.
+- service worker - working on the offline access. 
 
 ## Future Improvements
-- PWA functionality: (offline access, installability, etc.)
+- PWA functionality: (offline access, installability, etc.) (already done)
+- Database Access.
