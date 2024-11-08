@@ -12,9 +12,26 @@ The Weyer Mental Health Progressive Web Application (PWA) is intended to give us
    Podcasts: Listen to mental health discussions led by experts.
    Journaling: Write daily journals to reflect on thoughts and emotions.
 - Responsive Design: Optimized for mobile and desktop.
-- PWA Functionality (Future Improvement):
-   Installable on mobile devices for offline access.
-   Fast loading and reliable performance.
+- Offline capability using a service worker.
+- Caching of essential assets for faster load times.
+- PWA features, including installation prompts for supported devices.
+- Mental health resources, including videos, articles, and contact forms.
+
+## Service Worker
+
+The service worker is a core part of the PWA that enables offline functionality and caching. The service worker file, `serviceworker.js`, is registered in the main HTML file and manages caching of static assets and handling network requests.
+
+### How it Works
+
+- **Registration**: The service worker is registered in the `<head>` section of `index.html`, which ensures it’s loaded once the page is visited.
+- **Installation**: When the service worker is installed, it caches critical assets like HTML, CSS, JavaScript files, and images.
+- **Fetch Event**: During fetch events, the service worker intercepts requests, serving assets from the cache if available or fetching from the network otherwise.
+
+### How it Works
+
+- **Registration**: The service worker is registered in the `<head>` section of `index.html`, which ensures it’s loaded once the page is visited.
+- **Installation**: When the service worker is installed, it caches critical assets like HTML, CSS, JavaScript files, and images.
+- **Fetch Event**: During fetch events, the service worker intercepts requests, serving assets from the cache if available or fetching from the network otherwise.
 
 ## Technology Stack:
 - HTML/CSS/JavaScript: Core web technologies for building the front-end interface.
@@ -37,7 +54,7 @@ The Weyer Mental Health Progressive Web Application (PWA) is intended to give us
 - service worker - working on the offline access.
 
 ## Progress:
-- Right now, I only enable the PWA functionality with online access, and add or install to homescreen. 
+- Right now, I only enable the PWA functionality with online access, and add or install to homescreen.
 
 ## Future Improvements
 - PWA functionality: (offline access, installability, etc.) (already done)
