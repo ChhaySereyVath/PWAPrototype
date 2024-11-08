@@ -27,12 +27,6 @@ The service worker is a core part of the PWA that enables offline functionality 
 - **Installation**: When the service worker is installed, it caches critical assets like HTML, CSS, JavaScript files, and images.
 - **Fetch Event**: During fetch events, the service worker intercepts requests, serving assets from the cache if available or fetching from the network otherwise.
 
-### How it Works
-
-- **Registration**: The service worker is registered in the `<head>` section of `index.html`, which ensures it’s loaded once the page is visited.
-- **Installation**: When the service worker is installed, it caches critical assets like HTML, CSS, JavaScript files, and images.
-- **Fetch Event**: During fetch events, the service worker intercepts requests, serving assets from the cache if available or fetching from the network otherwise.
-
 ## Technology Stack:
 - HTML/CSS/JavaScript: Core web technologies for building the front-end interface.
 - Materialize CSS: framework used for designing responsive layouts.
