@@ -238,12 +238,19 @@ table td {
     gap: 15px;
 }
 
-.summary-card, .payment-card {
-    background-color: #f3e5f5;
+.history-container .card {
+    margin: 10px 0;
     padding: 15px;
+    border: 1px solid #ccc;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f3e5f5;
 }
+
+.history-container .card-content {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
 
 h3, h4 {
     color: #5e35b1;

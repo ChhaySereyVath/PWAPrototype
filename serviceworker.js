@@ -13,15 +13,26 @@ const ASSETS_TO_CACHE = [
     '/materialize/materialize.min.css',
     '/materialize/styles.css',
     '/js/materialize.min.js',
+    '/js/scripts.js',
+    '/js/firebaseDB.js',
+    '/js/indexDB.js',
 ];
 
+// Install service worker
 self.addEventListener("install", (event) => {
-  console.log("Service worker: Installing...");
+  console.log("Service Worker: Installing...");
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      console.log("Service worker: caching files");
-      return cache.addAll(ASSETS_TO_CACHE);
-    })
+      (async () => {
+          const cache = await caches.open(CACHE_NAME);
+          for (const asset of ASSETS_TO_CACHE) {
+              try {
+                  await cache.add(asset);
+                  console.log(`Service Worker: Cached Succesfully`);
+              } catch (error) {
+                  console.error(`Service Worker: Failed to cache ${asset}`, error);
+              }
+          }
+      })()
   );
 });
 

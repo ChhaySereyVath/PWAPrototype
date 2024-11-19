@@ -61,58 +61,31 @@
 <main class="booking-details-container">
     <div class="form-section">
         <h2>Your Details</h2>
-        <form action="/submit-booking" method="POST">
-            <label for="firstName">First Name</label>
-            <input type="text" id="firstName" name="firstName" required>
-            <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" name="lastName" required>
+        <form id="bookingForm">
+            <input type="hidden" id="reservationId" name="reservationId"> <!-- Hidden input for ID -->
+            <label for="FullName">Full Name</label>
+            <input type="text" id="FullName" name="FullName" required>
             <label for="email">E-mail</label>
             <input type="email" id="email" name="email" required>
             <label for="phone">Phone</label>
             <input type="tel" id="phone" name="phone" required>
+            <label for="arrivalDate">Preferred Session Date</label>
+            <input type="date" id="arrivalDate" name="arrivalDate" required>
             <label for="arrivalTime">Preferred Session Time</label>
             <input type="time" id="arrivalTime" name="arrivalTime" required>
             <label for="comments">Any personal requests?</label>
             <textarea id="comments" name="comments" rows="2"></textarea>
-            <button type="submit" class="submit-btn">Book Now</button>
+            <button type="submit" id="form-action-btn" class="submit-btn">Add</button>
         </form>
     </div>
 
-    <!-- Booking Summary Section -->
-    <div class="summary-section">
-        <div class="summary-card">
-            <h3>Booking Summary</h3>
-            <p><strong>Session Type:</strong> Premium Support Session</p>
-            <p><strong>Cost:</strong> $14.99 per session</p>
-            <p><strong>Date:</strong> Selected Date</p>
-            <p><strong>Time:</strong> Selected Time</p>
+    <!-- Booking History Section -->
+    <div class="history-section">
+        <div id="historyContainer" class="history-container">
+            <!-- Booking History Section -->
         </div>
-        <div class="payment-card">
-            <h4>Payment Method</h4>
-            <form>
-                <label>
-                    <input type="radio" name="payment" value="CreditCard" onclick="showCardDetails()" required>
-                    <span>Credit/Debit Card</span>
-                </label>
-                <label>
-                    <input type="radio" name="payment" value="PayPal" onclick="hideCardDetails()">
-                    <span>PayPal</span>
-                </label>
-        
-                <!-- Card Details Section (Shown only if Credit/Debit Card is selected) -->
-                <div id="card-details" class="card-details" style="display: none;">
-                    <label for="cardName">Name on Card</label>
-                    <input type="text" id="cardName" name="cardName">
-                    <label for="cardNumber">Card Number</label>
-                    <input type="text" id="cardNumber" name="cardNumber">
-                    <label for="expiryDate">Expiry Date</label>
-                    <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY">
-                    <label for="cvv">CVV</label>
-                    <input type="text" id="cvv" name="cvv">
-                </div>
-            </form>
-        </div>        
     </div>
+
 </main>
 
 <!-- Footer (reuse from homepage) -->
@@ -135,6 +108,8 @@
 
 <!-- Import Materialize JS and custom JS file -->
 <script src="/js/materialize.min.js"></script>
-<script src="/js/scipts.js"></script>
+<script type="module" src="/js/indexDB.js"></script>
+<script type="module" src="/js/firebaseDB.js"></script>
+
 </body>
 </html>
