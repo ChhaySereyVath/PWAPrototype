@@ -27,11 +27,55 @@ The service worker is a core part of the PWA that enables offline functionality 
 - **Installation**: When the service worker is installed, it caches critical assets like HTML, CSS, JavaScript files, and images.
 - **Fetch Event**: During fetch events, the service worker intercepts requests, serving assets from the cache if available or fetching from the network otherwise.
 
+## Firebase/Index DB
+The combination of FirebaseDB and IndexedDB provides users with an intuitive interface by ensuring that data is accessible and synchronized regardless of their internet connection.
+
+### How it works
+1. Online mode.
+When the user goes online:
+- FirebaseDB is the primary database for storing and retrieving information.
+- Operations such as adding, modifying, and removing reservations are instantaneously synced with Firebase.
+- IndexedDB is updated concurrently with the same data to provide consistency and offline access.
+Workflow: The user takes an action (e.g., adding a reservation).
+1. The app transmits the data to FirebaseDB and returns the generated Firebase ID.
+2. The data, together with the Firebase ID, are saved to IndexedDB for offline access.
+3. The modifications are immediately reflected in the user interface via the Firebase ID.
+Key points:
+- In the online mode, Firebase serves as the definitive source of truth.
+- IndexedDB functions as a local cache, providing faster access and offline fallback.
+  
+2. Offline mode.
+When the user is offline:
+- All operations are carried out utilizing IndexedDB, the browser's local database.
+- New reservations are granted temporary IDs in order to uniquely identify them until they can sync with Firebase.
+Workflow:
+1. A user takes an action (such as adding or updating a reservation).
+2. Data is stored locally in IndexedDB and assigned a temp-<timestamp> ID.
+3. The UI is quickly updated with data from IndexedDB.
+4. The reservation is marked as "unsynced."
+Key points:
+- IndexedDB enables the program to function seamlessly offline.
+- The user can read, add, or alter reservations, but changes are saved locally until an internet connection is restored.
+
+3. Synchronization
+When the app detects an internet connection after going offline:
+- The syncReservations function fetches all unsynced reservations from Indexed Database.
+- Each unsynced reservation is submitted to FirebaseDB, where it is assigned a permanent Firebase ID.
+- The relevant entry in IndexedDB is updated with the Firebase ID, replacing the temporary ID.
+- The user interface is refreshed to reflect the changed IDs and data.
+Key Steps in Synchronization:
+In IndexedDB, unsynchronized reservations are indicated by the flag synced: false.
+During synchronization, 
+- data is transferred to Firebase.
+- IndexedDB replaces temporary IDs with Firebase IDs.
+- The UI has been changed to reflect the changes.
+
 ## Technology Stack:
 - HTML/CSS/JavaScript: Core web technologies for building the front-end interface.
 - Materialize CSS: framework used for designing responsive layouts.
 - Local Storage: To store user preferences and journals.
-- PWA Features (Future Improvement): Service workers, caching for offline functionality, and installable app setup.
+- PWA Features: Service workers, caching for offline functionality, and installable app setup.
+- Firebase/Index DB: Store the form input from reservation page into database online and offline.
 
 ## File Structure:
 - index.html - Home page with mental health resources.
@@ -46,10 +90,13 @@ The service worker is a core part of the PWA that enables offline functionality 
 - images/ - store all the images used in the vscode
 - manifest.json - for add to homescreen.
 - service worker - working on the offline access.
+- firebaseDB.js - working with the firebase db fetching the data and add data. (Create, Read, Update, Delete).
+- indexDB.js - working with indexDB to store the data offline and will sync whenever it online also implemented the CRUD operation on to reservation page. 
 
 ## Progress:
-- Right now, I only enable the PWA functionality with online access, and add or install to homescreen.
+- Right now, I only enable the PWA functionality with online access, add or install to homescreen and now I completed the firebaseDB and indexDB to store the data or the input form from user into the both database wether it online or offline. 
 
 ## Future Improvements
-- PWA functionality: (offline access, installability, etc.) (already done)
-- Database Access.
+- PWA functionality: (offline access, installability, etc.) (Done).
+- Database Access for online and offline. (Done).
+- Secure Authentication and user profile.
