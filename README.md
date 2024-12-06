@@ -1,3 +1,7 @@
+Project Overview: https://docs.google.com/document/d/14Y8i4ctwlSamNEVG63Jt_46z3IAnc_wLrmMDY31LqLs/edit?usp=sharing
+Firebase Hosting: https://weyer-9c4be.web.app/
+
+
 # Weyer Mental Health PWA Prototype
 
 The Weyer Mental Health Progressive Web Application (PWA) is intended to give users with easily accessible mental health services. The portal provides a variety of entertainment options to enhance mental health, such as articles, podcasts, video and music playlists, and journaling tools. The site has a user-friendly layout and allows you to sign in or sign up for personalized content, as well as access support services.
@@ -69,6 +73,9 @@ During synchronization, 
 - data is transferred to Firebase.
 - IndexedDB replaces temporary IDs with Firebase IDs.
 - The UI has been changed to reflect the changes.
+
+4. User Authentication
+- When user is sign in, the user will display in firebase with userID and they can input any data that also appear within the userID so the data will not be mix if there another user sign in. 
 
 ## Technology Stack:
 - HTML/CSS/JavaScript: Core web technologies for building the front-end interface.
