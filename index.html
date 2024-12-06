@@ -38,7 +38,6 @@
                         <li><a href="/pages/entertainment.html">Entertainment</a></li>
                         <li><a href="/pages/contact.html">Contact</a></li>
                         <li><a href="/pages/booking.html" class="waves-effect waves-light btn-small">Book Now</a></li>
-                        <li><a href="/pages/signin.html" class="waves-effect waves-light btn-small">Sign In</a></li>
                     </ul>
                 </div>
             </nav>
@@ -54,7 +53,7 @@
             <li><a href="/pages/entertainment.html">Entertainment</a></li>
             <li><a href="/pages/contact.html">Contact</a></li>
             <li><a href="/pages/booking.html" class="waves-effect waves-light btn-small">Book Now</a></li>
-            <li><a href="/pages/signin.html" class="waves-effect waves-light btn-small">Sign In</a></li>
+            <li><a id="logout-btn" class="waves-effect waves-light btn-small" >Logout</a></li>
         </ul>
     </aside>
     
@@ -206,8 +205,10 @@
     </footer>
 
     <!-- Import Materialize JS and custom JS file -->
+    <script type="module" src ="/js/auth.js"></script>
     <script src="/js/materialize.min.js"></script>
     <script src="/js/scripts.js"></script>
     <script type="module" src="/js/firebaseDB.js"></script>
+
 </body>
 </html>

@@ -30,14 +30,9 @@
                         <img src="/images/img/logo.png" alt="Weyer Logo" class="logo-img">
                         <span class="brand-text">Weyer</span>
                     </a>
-                    <a href="/" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <li><a href="/">Home</a></li>
-                        <li><a href="/pages/about.html">About</a></li>
-                        <li><a href="/pages/booking.html">Booking</a></li>
-                        <li><a href="/pages/entertainment.html">Entertainment</a></li>
-                        <li><a href="/pages/contact.html">Contact</a></li>
-                        <li><a href="/pages/booking.html" class="waves-effect waves-light btn-small">Book Now</a></li>
                     </ul>
                 </div>
             </nav>
@@ -48,45 +43,82 @@
     <aside>
         <ul class="sidenav" id="mobile-menu">
             <li><a href="/">Home</a></li>
-            <li><a href="/pages/about.html">About</a></li>
-            <li><a href="/pages/booking.html">Booking</a></li>
-            <li><a href="/pages/entertainment.html">Entertainment</a></li>
-            <li><a href="/pages/contact.html">Contact</a></li>
-            <li><a href="/pages/booking.html" class="waves-effect waves-light btn-small">Book Now</a></li>
         </ul>
     </aside>
 
-    <!-- Sign In Form -->
+    <!-- Authentication Forms -->
     <main class="container">
-        <div class="row center-align">
-            <div class="col s12 m6 offset-m3">
-                <div class="card">
-                    <div class="card-content">
-                        <h5>Sign In</h5>
-                        <!-- Remove action and method, add an id -->
-                        <form id="sign-in-form">
-                            <div class="input-field">
-                              <input type="email" id="sign-in-email" name="email" required>
-                              <label for="sign-in-email">Email</label>
-                            </div>
-                            <div class="input-field">
-                              <input type="password" id="sign-in-password" name="password" required>
-                              <label for="sign-in-password">Password</label>
-                            </div>
-                            <button type="button" id="sign-in-btn" class="waves-effect waves-light btn purple darken-3">
-                              Sign In
-                            </button>
-                        </form>                          
-                    </div>
-                    <div class="card-action">
-                        <p>Don't have an account? <a href="/pages/signUp.html">Sign Up</a></p>
-                    </div>
-                </div>
-            </div>
+      <div
+      class="container z-depth-3"
+      style="margin-top: 50px; padding: 20px; border-radius: 10px"
+    >
+      <!-- Sign In Form -->
+      <div id="sign-in-form" class="row">
+        <h4 class="center-align purple-text text-darken-2">Sign In</h4>
+        <div class="input-field col s12">
+          <input type="email" id="sign-in-email" class="validate" required />
+          <label for="sign-in-email">Email</label>
         </div>
+        <div class="input-field col s12">
+          <input
+            type="password"
+            id="sign-in-password"
+            class="validate"
+            required
+          />
+          <label for="sign-in-password">Password</label>
+        </div>
+        <div class="col s12">
+          <button
+            id="sign-in-btn"
+            class="btn purple darken-2 waves-effect waves-light col s12"
+          >
+            Sign In
+          </button>
+        </div>
+        <div class="col s12 center-align">
+          <p>
+            Don't have an account?
+            <a href="#" id="show-signup" class="orange-text">Sign Up</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Sign Up Form -->
+      <div id="sign-up-form" class="row" style="display: none">
+        <h4 class="center-align purple-text text-darken-2">Sign Up</h4>
+        <div class="input-field col s12">
+          <input type="email" id="sign-up-email" class="validate" required />
+          <label for="sign-up-email">Email</label>
+        </div>
+        <div class="input-field col s12">
+          <input
+            type="password"
+            id="sign-up-password"
+            class="validate"
+            required
+          />
+          <label for="sign-up-password">Password</label>
+        </div>
+        <div class="col s12">
+          <button
+            id="sign-up-btn"
+            class="btn purple darken-2 waves-effect waves-light col s12"
+          >
+            Sign Up
+          </button>
+        </div>
+        <div class="col s12 center-align">
+          <p>
+            Already have an account?
+            <a href="#" id="show-signin" class="orange-text">Sign In</a>
+          </p>
+        </div>
+      </div>
+    </div>
     </main>
-    
-    <!-- Footer (reuse from homepage) -->
+
+    <!-- Footer -->
     <footer class="page-footer purple darken-3">
         <div class="container">
             <div class="row">
@@ -104,9 +136,8 @@
         </div>
     </footer>
 
-    <!-- Import Materialize JS and custom JS file -->
+    <!-- Import Materialize JS -->
     <script src="/js/materialize.min.js"></script>
-    <script src="/js/scripts.js"></script>
-
+    <script type="module" src="/js/signIn.js"></script>
 </body>
 </html>

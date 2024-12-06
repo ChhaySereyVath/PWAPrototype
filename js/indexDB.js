@@ -1,10 +1,11 @@
 import { openDB } from "https://unpkg.com/idb?module";
 import { addReservationToFirebase, deleteReservationFromFirebase, getReservationsFromFirebase, updateReservationInFirebase } from "./firebaseDB.js";
+import { getCurrentUser } from "./auth.js";
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
     const elems = document.querySelectorAll('.sidenav');
     M.Sidenav.init(elems);
-
+    await getCurrentUser();
     loadReservations();
     // syncReservations();
     checkStorageUsage();
@@ -36,49 +37,46 @@ async function createDB() {
 
 // Add reservation to IndexedDB
 async function addReservation(reservation) {
-  try {
-    const db = await createDB();
-    let reservationId;
+    try {
+        const db = await createDB();
+        const currentUser = await getCurrentUser();
+        if (!currentUser) {
+            throw new Error("User not authenticated");
+        }
+        const userId = currentUser.uid;
 
-    if (navigator.onLine) {
-      console.log("You are online");
-      const savedReservation = await addReservationToFirebase(reservation);
-      console.log("Saved reservation from Firebase:", savedReservation);
-      reservationId = savedReservation?.id; // Use optional chaining to prevent errors if undefined
+        let reservationId;
 
-      if (!reservationId) {
-        console.error("No ID returned from Firebase for the reservation.");
-        return null; // Exit early if no ID
-      }
+        if (navigator.onLine) {
+            const savedReservation = await addReservationToFirebase(reservation);
+            reservationId = savedReservation?.id;
 
-      const tx = db.transaction("reservations", "readwrite");
-      const store = tx.objectStore("reservations");
-      await store.put({ ...reservation, id: reservationId, synced: true });
-      console.log(`Reservation with ID ${reservationId} updated in IndexedDB.`);
-      await tx.done;
+            if (!reservationId) {
+                console.error("No ID returned from Firebase for the reservation.");
+                return null;
+            }
 
-      checkStorageUsage(); // Check and update storage usage
-      return { ...reservation, id: reservationId, synced: true };
-    } else {
-      console.log("You are offline");
-      reservationId = `temp-${Date.now()}`; // Create a temporary ID
-      console.log("Generated temporary ID:", reservationId);
+            const tx = db.transaction("reservations", "readwrite");
+            const store = tx.objectStore("reservations");
+            await store.put({ ...reservation, id: reservationId, userId, synced: true });
+            await tx.done;
 
-      const reservationToStore = { ...reservation, id: reservationId, synced: false };
+            return { ...reservation, id: reservationId, synced: true };
+        } else {
+            reservationId = `temp-${Date.now()}`;
+            const reservationToStore = { ...reservation, id: reservationId, userId, synced: false };
 
-      const tx = db.transaction("reservations", "readwrite");
-      const store = tx.objectStore("reservations");
-      await store.add(reservationToStore); // Add reservation with temporary ID
-      console.log("Reservation added with temporary ID:", reservationToStore);
-      await tx.done;
+            const tx = db.transaction("reservations", "readwrite");
+            const store = tx.objectStore("reservations");
+            await store.add(reservationToStore);
+            await tx.done;
 
-      checkStorageUsage(); // Check and update storage usage
-      return reservationToStore; // Return the complete reservation with the temporary ID
+            return reservationToStore;
+        }
+    } catch (error) {
+        console.error("Error adding reservation to IndexedDB:", error);
+        return null;
     }
-  } catch (error) {
-    console.error("Error adding reservation to IndexedDB:", error);
-    return null; // Ensure function returns a value even in case of an error
-  }
 }
 
 
@@ -160,25 +158,30 @@ function updateReservationInUI(id, updatedData) {
   console.log(`Reservation with ID ${id} updated in the UI.`);
 }
 
-
-
-
-// Get all reservations from IndexedDB
+// Get reservations from IndexedDB
 async function getReservations() {
-  try {
-    const db = await createDB();
-    const tx = db.transaction("reservations", "readonly");
-    const store = tx.objectStore("reservations");
+    try {
+        const db = await createDB();
+        const currentUser = await getCurrentUser();
+        if (!currentUser) {
+            throw new Error("User not authenticated");
+        }
+        const userId = currentUser.uid;
 
-    const reservations = await store.getAll();
-    await tx.done;
+        const tx = db.transaction("reservations", "readonly");
+        const store = tx.objectStore("reservations");
 
-    return reservations;
-  } catch (error) {
-    console.error("Error fetching reservations from IndexedDB:", error);
-    return [];
-  }
+        const allReservations = await store.getAll();
+        await tx.done;
+
+        // Filter reservations for the current user
+        return allReservations.filter(reservation => reservation.userId === userId);
+    } catch (error) {
+        console.error("Error fetching reservations from IndexedDB:", error);
+        return [];
+    }
 }
+
 
 // Delete reservation from IndexedDB
 async function deleteReservation(id) {
@@ -580,6 +583,19 @@ function closeForm() {
   });
 }
 
+//clear indexedDB
+export async function clearIndexedDB() {
+    try {
+        const db = await createDB();
+        const tx = db.transaction("reservations", "readwrite");
+        const store = tx.objectStore("reservations");
+        await store.clear();
+        await tx.done;
+        console.log("IndexedDB cleared.");
+    } catch (error) {
+        console.error("Error clearing IndexedDB:", error);
+    }
+}
 
 // Check storage usage and update the UI
 async function checkStorageUsage() {

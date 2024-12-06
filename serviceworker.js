@@ -1,5 +1,5 @@
 // Versioning for cache
-const CACHE_NAME = 'weyer-pwa-cache-v1.1';
+const CACHE_NAME = 'weyer-pwa-cache-v4.4';
 const ASSETS_TO_CACHE = [
     '/',
     '/index.html',
@@ -8,14 +8,15 @@ const ASSETS_TO_CACHE = [
     '/pages/contact.html',
     '/pages/entertainment.html',
     '/pages/reservation.html',
-    '/pages/signin.html',
-    '/pages/signup.html',
+    '/pages/auth.html',
     '/materialize/materialize.min.css',
     '/materialize/styles.css',
     '/js/materialize.min.js',
     '/js/scripts.js',
     '/js/firebaseDB.js',
     '/js/indexDB.js',
+    '/js/auth.js',
+    '/js/signIn.js',
 ];
 
 // Install service worker
