@@ -91,14 +91,16 @@ During synchronization, 
 - booking.html - Session booking page.
 - reservation.html - Submit a session after selecting the one you need.
 - contact.html - Contact form for user support.
-- signin.html - Login and Signup pages for user authentication.
+- auth.html - Login and Signup pages for user authentication.
 - style.css - Custom styling for the PWA.
 - js/scripts.js - JavaScript handling PWA.
 - images/ - store all the images used in the vscode
 - manifest.json - for add to homescreen.
 - service worker - working on the offline access.
 - firebaseDB.js - working with the firebase db fetching the data and add data. (Create, Read, Update, Delete).
-- indexDB.js - working with indexDB to store the data offline and will sync whenever it online also implemented the CRUD operation on to reservation page. 
+- indexDB.js - working with indexDB to store the data offline and will sync whenever it online also implemented the CRUD operation on to reservation page.
+- auth.js - working with user authentication and sync accross user. 
+- signIn.js - working with user signin and signup.
 
 ## Progress:
 - Right now, I only enable the PWA functionality with online access, add or install to homescreen and now I completed the firebaseDB and indexDB to store the data or the input form from user into the both database wether it online or offline. 
